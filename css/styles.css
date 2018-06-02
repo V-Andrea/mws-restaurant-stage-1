@@ -32,7 +32,6 @@ video {
 
 ul {
   list-style: none;
-  padding-left: 0;
 }
 
 a {
@@ -72,7 +71,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 .grid-container {
     margin: 0 auto;
-    max-width: 1200px;
     width: 100%;
 }
 
@@ -80,6 +78,15 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row > [class^="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .col-1 {
@@ -312,31 +319,33 @@ nav h1 a {
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
-  margin: 0;
-  padding: 30px 15px 60px;
   text-align: center;
 }
-#restaurants-list li {
+#restaurants-list article {
+  flex-direction: column;
   background-color: #fff;
-  border: 2px solid #ccc;
-  font-family: Arial,sans-serif;
-  margin: 15px;
-  min-height: 380px;
-  padding: 0 30px 25px;
+  border: 1px solid #ccc;
   text-align: left;
-  width: 270px;
 }
+
+#restaurants-list .restaurant-body, 
+#restaurants-list .restaurant-footer {
+    padding: 30px 15px;
+}
+
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
-  min-width: 100%;
 }
+
+#restaurants-list .restaurant-body {
+    flex: 1 1 auto;
+}
+
 #restaurants-list li h1 {
   color: #f18200;
-  font-family: Arial,sans-serif;
   font-size: 14pt;
   font-weight: 200;
   letter-spacing: 0;
